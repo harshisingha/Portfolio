@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harshi Singha</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#1B3A5C;--gold:#E8A838;--light:#F7F4EF;--text:#222;--muted:#666;--border:#e0ddd8}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);line-height:1.6}
+nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;height:52px}
+.nav-logo{font-family:'DM Serif Display',serif;color:#fff;font-size:18px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:24px}
+.nav-links a{color:rgba(255,255,255,0.65);font-size:13px;text-decoration:none}
+.nav-links a:hover{color:var(--gold)}
+.nav-dl{background:var(--gold);color:var(--navy)!important;padding:5px 14px;border-radius:20px;font-weight:500;font-size:12px!important}
+.hero{background:var(--navy);color:#fff;padding:5rem 2rem 0;position:relative;overflow:hidden;text-align:center}
+.hero-c1{position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:rgba(232,168,56,0.07);pointer-events:none}
+.hero-c2{position:absolute;bottom:-80px;left:-80px;width:280px;height:280px;border-radius:50%;background:rgba(232,168,56,0.05);pointer-events:none}
+.eyebrow{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.hero-name{font-family:'DM Serif Display',serif;font-size:clamp(42px,8vw,72px);line-height:1;margin-bottom:16px}
+.hero-name em{color:var(--gold);font-style:normal}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.6);margin:0 auto 2rem}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-p{background:var(--gold);color:var(--navy);font-family:'DM Sans',sans-serif;font-weight:500;font-size:13px;padding:10px 22px;border-radius:24px;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn-g{background:transparent;color:rgba(255,255,255,0.7);font-family:'DM Sans',sans-serif;font-size:13px;padding:10px 22px;border-radius:24px;border:1px solid rgba(255,255,255,0.25);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn-g:hover{border-color:var(--gold);color:var(--gold)}
+.ticker-wrap{background:var(--gold);overflow:hidden}
+.ticker{display:flex;white-space:nowrap;animation:tick 28s linear infinite}
+.ticker-item{font-size:12px;font-weight:500;color:var(--navy);padding:8px 28px;border-right:1px solid rgba(27,58,92,0.15)}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.stats{background:var(--light);display:flex;justify-content:center;flex-wrap:wrap;border-bottom:1px solid var(--border)}
+.stat{text-align:center;padding:2rem 2.5rem;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'DM Serif Display',serif;font-size:32px;color:var(--navy);line-height:1}
+.stat-label{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:0.5px}
+.layout{display:grid;grid-template-columns:240px 1fr;max-width:1040px;margin:0 auto}
+.sidebar{background:var(--light);padding:2.5rem 1.75rem;border-right:1px solid var(--border)}
+.sb-sec{margin-bottom:2rem}
+.sb-title{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.sb-row{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text);padding:4px 0}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px}
+.sb-sub{font-size:11px;color:var(--muted);margin-left:14px;margin-top:-2px;margin-bottom:4px}
+.pill{display:inline-block;font-size:11px;padding:3px 10px;border-radius:14px;background:#fff;border:1px solid var(--border);color:var(--muted);margin:2px 2px 2px 0}
+.achieve{background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:8px}
+.achieve-num{font-family:'DM Serif Display',serif;font-size:20px;color:var(--navy)}
+.achieve-lbl{font-size:11px;color:var(--muted);margin-top:2px}
+.main{padding:2.5rem;background:#fff}
+.section{margin-bottom:2.5rem}
+.sec-head{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);font-weight:500;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+.profile{font-size:14px;color:var(--muted);line-height:1.8}
+.profile strong{color:var(--text);font-weight:500}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.proj{background:var(--light);border:1px solid var(--border);border-radius:10px;padding:16px;cursor:pointer;transition:border-color 0.2s,transform 0.15s}
+.proj:hover{border-color:var(--gold);transform:translateY(-2px)}
+.proj-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.proj-icon{width:36px;height:36px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.proj-name{font-size:13px;font-weight:500;color:var(--text)}
+.proj-type{font-size:10px;color:var(--muted);margin-top:1px}
+.proj-desc{font-size:12px;color:var(--muted);line-height:1.6}
+.proj-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;padding:3px 8px;background:rgba(27,58,92,0.07);color:var(--navy);border-radius:10px;margin-top:8px}
+.tl{position:relative;padding-left:20px}
+.tl::before{content:'';position:absolute;left:0;top:6px;bottom:6px;width:2px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:20px;padding-left:18px}
+.tl-item:last-child{margin-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-5px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid #fff;box-shadow:0 0 0 1px var(--gold)}
+.tl-title{font-size:13px;font-weight:500;color:var(--text)}
+.tl-org{font-size:12px;color:var(--navy);margin:2px 0}
+.tl-date{font-size:11px;color:var(--muted)}
+.tl-desc{font-size:12px;color:var(--muted);line-height:1.65;margin-top:4px}
+.games-sec{background:var(--navy);padding:3rem 2rem;text-align:center}
+.games-title{font-family:'DM Serif Display',serif;font-size:28px;color:#fff;margin-bottom:8px}
+.games-sub{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:2rem}
+.games-grid{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.game-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:20px 28px;width:200px;text-decoration:none;display:block;transition:border-color 0.2s}
+.game-card:hover{border-color:var(--gold)}
+.game-emoji{font-size:32px;margin-bottom:10px}
+.game-name{font-size:13px;font-weight:500;color:#fff;margin-bottom:4px}
+.game-desc{font-size:11px;color:rgba(255,255,255,0.5)}
+.game-play{display:inline-block;margin-top:10px;font-size:10px;padding:4px 12px;background:var(--gold);color:var(--navy);border-radius:14px;font-weight:500}
+footer{background:var(--navy);padding:2rem;text-align:center;color:rgba(255,255,255,0.4);font-size:12px}
+footer a{color:var(--gold);text-decoration:none}
+@media(max-width:680px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{border-right:none;border-bottom:1px solid var(--border)}
+  .stats{flex-wrap:wrap}
+  .stat{padding:1.5rem 2rem;border-right:none;border-bottom:1px solid var(--border);width:50%}
+  .proj-grid{grid-template-columns:1fr}
+  .games-grid{flex-direction:column;align-items:center}
+  .hero{padding:3rem 1.5rem 0}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Harshi <span>Singha</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#games">Games</a>
+    <a href="mailto:harshisingha@gmail.com" class="nav-dl">Get in touch</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-c1"></div>
+  <div class="hero-c2"></div>
+  <div class="eyebrow">HARSHISINGHA.COM &nbsp;·&nbsp; SYDNEY NSW</div>
+  <h1 class="hero-name">Year 10.<br><em>Already shipping.</em></h1>
+  <p class="hero-sub">Volunteer. Vibe coder. Dog lover. Aspiring hospitality professional.</p>
+  <div class="hero-btns">
+    <a href="#experience" class="btn-p">❤️ Her story</a>
+    <a href="#games" class="btn-g">🎮 Play her games</a>
+    <a href="#projects" class="btn-g">🚀 Projects</a>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">⚽ Football · ages 5–12</span>
+    <span class="ticker-item">🐕 Hosted 10+ dogs on Mad Paws</span>
+    <span class="ticker-item">🎹 Piano student</span>
+    <span class="ticker-item">📸 Photography</span>
+    <span class="ticker-item">🏊 Swimming · ages 5–10</span>
+    <span class="ticker-item">🌍 Learning 3 languages</span>
+    <span class="ticker-item">🎮 Vibe coded 2 games</span>
+    <span class="ticker-item">🗳️ 3 federal elections volunteered</span>
+    <span class="ticker-item">✈ Flew a Cetabria plane at age 10</span>
+    <span class="ticker-item">🏃 Park Run volunteer & participant</span>
+    <span class="ticker-item">🏃 City to Surf 4+ times</span>
+    <span class="ticker-item">⚽ Football · ages 5–12</span>
+    <span class="ticker-item">🐕 Hosted 10+ dogs on Mad Paws</span>
+    <span class="ticker-item">🎹 Piano student</span>
+    <span class="ticker-item">📸 Photography</span>
+    <span class="ticker-item">🏊 Swimming · ages 5–10</span>
+    <span class="ticker-item">🌍 Learning 3 languages</span>
+    <span class="ticker-item">🎮 Vibe coded 2 games</span>
+    <span class="ticker-item">🗳️ 3 federal elections volunteered</span>
+    <span class="ticker-item">✈ Flew a Cetabria plane at age 10</span>
+    <span class="ticker-item">🏃 Park Run volunteer & participant</span>
+    <span class="ticker-item">🏃 City to Surf 4+ times</span>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">$1,000+</div><div class="stat-label">RAISED FOR CHARITY</div></div>
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-label">DOGS HOSTED ON MAD PAWS</div></div>
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label">FEDERAL ELECTIONS VOLUNTEERED</div></div>
+  <div class="stat"><div class="stat-num">2</div><div class="stat-label">BROWSER GAMES BUILT</div></div>
+  <div class="stat"><div class="stat-num">✈</div><div class="stat-label">FLEW A CETABRIA PLANE (AGE 10)</div></div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sb-sec">
+      <div class="sb-title">Contact</div>
+      <div class="sb-row"><span class="dot"></span>0403 918 278</div>
+      <div class="sb-row"><span class="dot"></span>harshisingha@gmail.com</div>
+      <div class="sb-row"><span class="dot"></span>harshisingha.com</div>
+    </div>
+    <div class="sb-sec">
+      <div class="sb-title">Skills</div>
+      <div class="sb-row"><span class="dot"></span>Customer Service</div>
+      <div class="sb-row"><span class="dot"></span>Cash Handling</div>
+      <div class="sb-row"><span class="dot"></span>Communication & Teamwork</div>
+      <div class="sb-row"><span class="dot"></span>Graphic Design</div>
+      <div class="sb-row"><span class="dot"></span>AI Tools (Claude, ChatGPT)</div>
+      <div class="sb-row"><span class="dot"></span>Salesforce CRM</div>
+      <div class="sb-row"><span class="dot"></span>Typing 30+ WPM</div>
+    </div>
+    <div class="sb-sec">
+      <div class="sb-title">Languages</div>
+      <span class="pill">English ★★★</span>
+      <span class="pill">Hindi ★★</span>
+      <span class="pill">French ★</span>
+    </div>
+    <div class="sb-sec">
+      <div class="sb-title">Sports & Music</div>
+      <div class="sb-row"><span class="dot"></span>Football · ages 5–12</div>
+      <div class="sb-row"><span class="dot"></span>Swimming · ages 5–10</div>
+      <div class="sb-row"><span class="dot"></span>Piano · several years</div>
+    </div>
+    <div class="sb-sec">
+      <div class="sb-title">Interests</div>
+      <div class="sb-row"><span class="dot"></span>Photography</div>
+      <div class="sb-row"><span class="dot"></span>Dog walking</div>
+      <div class="sb-row"><span class="dot"></span>Learning languages</div>
+      <div class="sb-row"><span class="dot"></span>Vibe coding & AI</div>
+    </div>
+    <div class="sb-sec">
+      <div class="sb-title">Education</div>
+      <div class="sb-row"><span class="dot"></span>Glenwood High School</div>
+      <div class="sb-sub">Year 10 · Sydney NSW</div>
+      <div class="sb-sub">Food Technology · French (LOTE)</div>
+    </div>
+    <div class="sb-sec">
+      <div class="sb-title">Achievements</div>
+      <div class="achieve"><div class="achieve-num">🏅</div><div class="achieve-lbl">Duke of Edinburgh Bronze Award</div></div>
+      <div class="achieve"><div class="achieve-num">$1K+</div><div class="achieve-lbl">Raised for charity via Bunnings BBQs</div></div>
+      <div class="achieve"><div class="achieve-num">✈</div><div class="achieve-lbl">Flew a Cetabria plane (age ~10)</div></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="section" id="about">
+      <div class="sec-head">About me</div>
+      <p class="profile">I'm a Year 10 student at Glenwood High School in Sydney with a strong record of <strong>community volunteering, fundraising, and customer service</strong>. I've played competitive football, learned piano, participated in charity walks and events, built browser games with AI, and run my own pet sitting business. I'm reliable, hardworking, and always looking for the next thing to learn. Currently seeking my first opportunity in <strong>food and hospitality</strong>.</p>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="sec-head">Projects & Exploration</div>
+      <div class="proj-grid">
+        <div class="proj" onclick="document.getElementById('games').scrollIntoView({behavior:'smooth'})">
+          <div class="proj-top"><div class="proj-icon">🐍</div><div><div class="proj-name">Snake Game</div><div class="proj-type">Vibe Coded · HTML/JS</div></div></div>
+          <div class="proj-desc">Retro CRT-style Snake with glowing effects. Built from scratch using Claude AI.</div>
+          <span class="proj-badge">▶ Playable in browser</span>
+        </div>
+        <div class="proj" onclick="document.getElementById('games').scrollIntoView({behavior:'smooth'})">
+          <div class="proj-top"><div class="proj-icon">🧱</div><div><div class="proj-name">Breakout Game</div><div class="proj-type">Vibe Coded · HTML/JS</div></div></div>
+          <div class="proj-desc">Multi-ball brick breaker with gold power-up bricks and mobile tilt controls.</div>
+          <span class="proj-badge">▶ Playable in browser</span>
+        </div>
+        <div class="proj">
+          <div class="proj-top"><div class="proj-icon">☁️</div><div><div class="proj-name">Salesforce Trailhead</div><div class="proj-type">Self-Initiated · CRM</div></div></div>
+          <div class="proj-desc">Completed CRM badges exploring cloud-based business tools and platforms.</div>
+          <span class="proj-badge">✓ Badges earned</span>
+        </div>
+        <div class="proj">
+          <div class="proj-top"><div class="proj-icon">📈</div><div><div class="proj-name">FX Trading</div><div class="proj-type">Udemy · Live Account</div></div></div>
+          <div class="proj-desc">Completed Udemy course and managed a live $1,000 trading account.</div>
+          <span class="proj-badge">✓ Completed</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="sec-head">Experience & Volunteering</div>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-title">Pet Sitter & Dog Walker</div>
+          <div class="tl-org">Singha Family Dog Sitting — Mad Paws</div>
+          <div class="tl-date">2022 – 2024</div>
+          <div class="tl-desc">Ran an independent pet sitting business via Mad Paws, hosting 10+ dogs and earning consistently excellent reviews. Managed all bookings, client communication and animal care independently.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-title">Election Volunteer</div>
+          <div class="tl-org">Australian Federal Elections</div>
+          <div class="tl-date">2019, 2022 & 2025</div>
+          <div class="tl-desc">Volunteered across three campaigns — distributed how-to-vote materials, directed voters at polling booths, conducted letterbox drops and assisted with polling day operations.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-title">Fundraising Volunteer</div>
+          <div class="tl-org">FoxG1 Foundation & Even Foundation</div>
+          <div class="tl-date">2021 – Present</div>
+          <div class="tl-desc">Cash handling, food serving and customer service at Bunnings BBQ fundraisers. Helped raise $1,000+ for charity across multiple events.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-title">Park Run Volunteer & Participant</div>
+          <div class="tl-org">Community Park Run Events</div>
+          <div class="tl-date">Multiple Years</div>
+          <div class="tl-desc">Volunteered in multiple roles including token collector, tail runner, and corner marker. Participated in the 5K community walk/run with family across multiple years.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-title">Charity Walks & Community Events</div>
+          <div class="tl-org">CMRI & Westmead Children's Hospital</div>
+          <div class="tl-date">2018 – 2022</div>
+          <div class="tl-desc">Participated in City to Surf (14km walk) 4+ times · Sun Run multiple years · Springside Spring Cycle for Westmead Children's Hospital.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-title">Graphic Design Assistant</div>
+          <div class="tl-org">Family — Cybersecurity & LinkedIn</div>
+          <div class="tl-date">2023 – Present</div>
+          <div class="tl-desc">Created graphics for a cybersecurity internship project and LinkedIn professional publications.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<section class="games-sec" id="games">
+  <div class="games-title">Play Harshi's Games</div>
+  <div class="games-sub">Both built from scratch via vibe coding with Claude AI — open in any browser</div>
+  <div class="games-grid">
+    <a class="game-card" href="snake_game.html" target="_blank">
+      <div class="game-emoji">🐍</div>
+      <div class="game-name">Snake</div>
+      <div class="game-desc">Retro CRT style · Arrow keys</div>
+      <span class="game-play">▶ Play now</span>
+    </a>
+    <a class="game-card" href="breakout_game.html" target="_blank">
+      <div class="game-emoji">🧱</div>
+      <div class="game-name">Breakout</div>
+      <div class="game-desc">Multi-ball · Mobile tilt controls</div>
+      <span class="game-play">▶ Play now</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p><strong style="color:rgba(255,255,255,0.7)">Harshi Singha</strong> &nbsp;·&nbsp; Sydney NSW &nbsp;·&nbsp; <a href="mailto:harshisingha@gmail.com">harshisingha@gmail.com</a> &nbsp;·&nbsp; 0403 918 278</p>
+  <p style="margin-top:8px">Built with Claude AI &nbsp;·&nbsp; <a href="harshisingha.com">harshisingha.com</a></p>
+</footer>
+
+</body>
+</html>
